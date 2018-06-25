@@ -1,2 +1,5 @@
 # WinterSchool_A1
-where we store stuff
+This is where we store stuff
+
+A guide for beginners:
+https://guides.github.com/
