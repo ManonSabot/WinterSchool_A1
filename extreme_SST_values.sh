@@ -11,10 +11,13 @@
 
 
 # multi year with 20 days running mean
-cdo ydrunpctl,10,20 ./SST_ANOM_ALL.nc -ydrunmin ./SST_ANOM_ALL.nc \
-	-ydrunmax ./SST_ANOM_ALL.nc ./SST_10_yrs_20rm.nc
-cdo ydrunpctl,90,20 ./SST_ANOM_ALL.nc -ydrunmin ./SST_ANOM_ALL.nc \
-	-ydrunmax ./SST_ANOM_ALL.nc ./SST_90_yrs_20rm.nc
+cdo ydrunmin,20 ./SST_ANOM_ALL.nc minfile.nc
+cdo ydrunmax,20 ./SST_ANOM_ALL.nc maxfile.nc
+cdo ydrunpctl,10,20 ./SST_ANOM_ALL.nc ./minfile.nc ./maxfile.nc \
+	./SST_10_yrs_20rm.nc
+cdo ydrunpctl,90,20 ./SST_ANOM_ALL.nc ./minfile.nc ./maxfile.nc \
+	./SST_90_yrs_20rm.nc
+rm ./minfile.nc ./maxfile.nc
 
 # multi year no running mean
 cdo timpctl,10 ./SST_ANOM_ALL.nc -timmin ./SST_ANOM_ALL.nc \
