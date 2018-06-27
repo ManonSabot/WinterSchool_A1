@@ -42,8 +42,8 @@ def main(fname, idate):
 
 	if 'ALL' in fname:
 		time = return_time(data['time'])
-		reef_points(data)
-		#mhw_stats(time, test_cell['sst'])
+		reef_cell = reef_points(data)
+		mhw_stats(time, reef_cell['sst'])
 
 	else:
 		if '_10_' in fname:
@@ -78,7 +78,7 @@ def read_data(fname):
 
 	"""
 
-	ds = xr.open_dataset(fname, drop_variables = ['ice', 'err']) # access the data
+	ds = xr.open_dataset(fname, drop_variables = ['ice', 'err']) # open .nc
 	ds = ds.squeeze(dim = 'zlev', drop = True) # drop elevation var, empty
 
 	return ds
@@ -91,7 +91,8 @@ def return_time(xtime):
 	start_date = (start_date.split('datetime64[ns] ')[1]
 				  .split('Attributes:')[0])
 	end_date = end_date.split('datetime64[ns] ')[1].split('Attributes:')[0]
-	start_date = date(int(start_date[:4]), int(start_date[5:7]), int(start_date[8:10]))
+	start_date = date(int(start_date[:4]), int(start_date[5:7]),
+					  int(start_date[8:10]))
 	end_date = date(int(end_date[:4]), int(end_date[5:7]), int(end_date[8:10]))
 	time = np.arange(start_date.toordinal(), end_date.toordinal()+1)
 
@@ -100,17 +101,17 @@ def return_time(xtime):
 
 def reef_points(data):
 
-	lats = [-10.875, -11.375, -12.125, -13.125, -13.625, -14.375, -15.625, -16.375, \
-			-17.375, -18.125, -19.125, -20.125, -21.125, -22.125, -23.625, -24.625]
-	lons = [143.125, 143.373, 143.875, 144.375, 144.625, 145.375, 145.625, 146.125, \
-			146.375, 146.875, 148.125, 149.625, 150.375, 152.125, 152.375, 153.375]
+	lats = [-10.875, -11.375, -12.125, -13.125, -13.625, -14.375, -15.625, \
+			-16.375, -17.375, -18.125, -19.125, -20.125, -21.125, -22.125, \
+			-23.625, -24.625]
+	lons = [143.125, 143.373, 143.875, 144.375, 144.625, 145.375, 145.625, \
+			146.125, 146.375, 146.875, 148.125, 149.625, 150.375, 152.125, \
+			152.375, 153.375]
 
 	all_points = data.sel(lon=lons, lat=lats, method='nearest')
-	all_points = all_points.mean(dim=['lon', 'lat'])
+	all_points = all_points.mean(dim=('lon', 'lat'))
 
-	print(all_points)
-
-
+	return all_points
 
 
 def dms2dd(degrees, minutes, seconds, direction):
@@ -163,17 +164,15 @@ def draw_reef(proj):
 	
 	for i in range(len(lats) - 1):
 
-		plt.plot([lons[i], lons[i+1]], [lats[i], lats[i+1]],
-				 linewidth = 1.5, color = 'k',
-				 transform = proj)
+		plt.plot([lons[i], lons[i+1]], [lats[i], lats[i+1]], linewidth = 1.5,
+				  color = 'k', transform = proj)
 
 	return
 
 
 def draw_background_map(ax, lon, lat, proj, res = '10m'):
 
-	ax.set_extent([lon[0], lon[len(lon)-1], lat[0], 
-				  lat[len(lat)-1]], proj)
+	ax.set_extent([lon[0], lon[len(lon)-1], lat[0], lat[len(lat)-1]], proj)
 	ax.coastlines(resolution = res)
 	ax.add_feature(cfeature.LAND, facecolor = 'white')
 	ax.add_feature(cfeature.BORDERS, alpha=0.05)
@@ -181,8 +180,8 @@ def draw_background_map(ax, lon, lat, proj, res = '10m'):
 	return
 
 
-def plot_SST_anom(data, p_thresh, idate,
-				  proj = ccrs.LambertCylindrical(), layout = 'line'):
+def plot_SST_anom(data, p_thresh, idate, proj = ccrs.LambertCylindrical(),
+															   layout = 'line'):
 
 	fig = plt.figure()
 	fig.patch.set_facecolor('white')
@@ -208,7 +207,7 @@ def plot_SST_anom(data, p_thresh, idate,
 
 	draw_background_map(ax, data['lon'], data['lat'], proj)
 	ctr = ax.contourf(data['lon'], data['lat'], data['anom'][idate,:,:],
-		   			   cmap = plt.cm.GnBu,transform = proj)
+		   			  cmap = plt.cm.GnBu,transform = proj)
 	draw_reef(proj)
 	plt.colorbar(ctr)
 	plt.title('SST anomaly')

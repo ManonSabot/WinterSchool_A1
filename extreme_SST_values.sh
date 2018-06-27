@@ -55,6 +55,9 @@ cdo yseaspctl,90 ./SST_ANOM_ALL.nc ./minfile.nc ./maxfile.nc \
 rm ./minfile.nc ./maxfile.nc
 
 
+# for comparaison, multi-year seasonal mean
+cdo yseasmean ./SST_ANOM_ALL.nc ./SST_mean_seasons.nc
+
 # each year
 cdo yearpctl,10 ./SST_ANOM_ALL.nc -yearmin ./SST_ANOM_ALL.nc \
 	-yearmax ./SST_ANOM_ALL.nc ./SST_10_yr.nc
