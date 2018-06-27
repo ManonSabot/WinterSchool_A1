@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# important comment: work in progress, SEASONAL doesn't seem to work
-# no idea what the rest is, I will retrieve those extremes using
-# a python script tomorrow (or different CDO commands)
+# title needs reworking for better understanding of what is represented
 
 """
 Plot SST obs cold and hot extremes for the great barrier reef region,
@@ -11,8 +9,8 @@ depending on method to get extreme values
 
 References:
 -----------
-* netcdf extreme files were generated using CDO ydrunpctl, timpctl,
-  yseaspctl, and yearpctl
+* netcdf extreme files were generated using CDO ydrunpctl, running mean then
+  timpctl, timpctl, yseaspctl, and yearpctl
 * original data is NOAA ARVHH daily satellite SST product
 
 """
@@ -35,29 +33,17 @@ import cartopy.feature as cfeature # equivalent to basemap
 
 #==============================================================================
 
-def main(fname):
+def main(fname, idate):
 
 	data = read_data(fname)
-	SST = data['sst']
-	anom = data['anom']
 
-	fig, ax = plt.subplots()
-	fig.patch.set_facecolor('white')
+	if '_10_' in fname:
+		p_thresh = 10
 
-	ax = plt.subplot(1, 1, 1, projection=ccrs.LambertCylindrical())
-	ax.set_extent([data['lon'][0], data['lon'][len(data['lon'])-1],
-				  data['lat'][0]-1.25, data['lat'][len(data['lat'])-1]])
-	ax.coastlines(resolution = '10m')
-	ax.add_feature(cfeature.LAND, facecolor = 'white')
-	ax.add_feature(cfeature.BORDERS, alpha=0.05)
+	if '_90_' in fname:
+		p_thresh = 90
 
-	ctr = plt.contourf(data['lon'], data['lat'], data['sst'][0,:,:],
-		   			  cmap = plt.cm.GnBu,transform = ccrs.LambertCylindrical())
-	draw_reef()
-	plt.colorbar(ctr)
-
-	fig.suptitle('Sea Surface Temperature')
-	plt.show()
+	plot_SST_anom(data, p_thresh, idate)
 
 
 
@@ -132,7 +118,7 @@ def draw_reef():
 	lons = [dms2dd(142.5, 0, 4, 'W'), dms2dd(145, 0, 4, 'W'), \
 			dms2dd(145, 0, 4, 'W'), dms2dd(147, 0, 4, 'W'), \
 			dms2dd(152, 55, 4, 'W'), dms2dd(154, 0, 4, 'W'), \
-			dms2dd(152, 52, 4, 'W')]
+			dms2dd(152, 53, 4, 'W')]
 	
 	for i in range(len(lats) - 1):
 
@@ -143,9 +129,61 @@ def draw_reef():
 	return
 
 
+def draw_background_map(ax, lon, lat, proj, res = '10m'):
+
+	ax.set_extent([lon[0], lon[len(lon)-1], lat[0], 
+				  lat[len(lat)-1]], proj)
+	ax.coastlines(resolution = res)
+	ax.add_feature(cfeature.LAND, facecolor = 'white')
+	ax.add_feature(cfeature.BORDERS, alpha=0.05)
+
+	return
+
+
+def plot_SST_anom(data, p_thresh, idate,
+				  proj = ccrs.LambertCylindrical(), layout = 'line'):
+
+	fig = plt.figure()
+	fig.patch.set_facecolor('white')
+
+	if layout == 'line':
+		ax = plt.subplot(1, 2, 1, projection = proj)
+
+	if layout == 'column':
+		ax = plt.subplot(2, 1, 1, projection = proj)
+
+	draw_background_map(ax, data['lon'], data['lat'], proj)
+	ctr = ax.contourf(data['lon'], data['lat'], data['sst'][idate,:,:],
+		   			  cmap = plt.cm.GnBu, transform = proj)
+	draw_reef()
+	plt.colorbar(ctr)
+	plt.title('SST')
+
+	if layout == 'line':
+		ax = plt.subplot(1, 2, 2, projection = proj)
+
+	if layout == 'column':
+		ax = plt.subplot(2, 1, 2, projection = proj)
+
+	draw_background_map(ax, data['lon'], data['lat'], proj)
+	ctr2 = ax.contourf(data['lon'], data['lat'], data['anom'][idate,:,:],
+		   			   cmap = plt.cm.GnBu,transform = proj)
+	draw_reef()
+	plt.colorbar(ctr)
+	plt.title('SST anomaly')
+
+	doy = str(data['time'][idate])
+	doy = (doy.split('Coordinates:')[1].split('Attributes:')[0]
+		   .split('64[ns] ')[1].split('T')[0])
+	fig.suptitle('%dth percentile SST on %s' % (p_thresh, doy))
+	plt.show()
+
+
 if __name__ == "__main__":
 
 	fname = os.path.join(os.getcwd(), 'SST_extremes') # input data dir path
 	fname = os.path.join(fname, 'SST_90_yrs_20rm.nc')
 
-	main(fname)
+	idate = 0 # date choice in the timeseries
+
+	main(fname, idate)
