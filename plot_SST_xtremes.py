@@ -43,6 +43,9 @@ def main(fname, idate):
 	if '_90_' in fname:
 		p_thresh = 90
 
+	print(data['time'])
+	print(data.keys)
+
 	plot_SST_anom(data, p_thresh, idate)
 
 
@@ -166,23 +169,20 @@ def plot_SST_anom(data, p_thresh, idate,
 		ax = plt.subplot(2, 1, 2, projection = proj)
 
 	draw_background_map(ax, data['lon'], data['lat'], proj)
-	ctr2 = ax.contourf(data['lon'], data['lat'], data['anom'][idate,:,:],
+	ctr = ax.contourf(data['lon'], data['lat'], data['anom'][idate,:,:],
 		   			   cmap = plt.cm.GnBu,transform = proj)
 	draw_reef()
 	plt.colorbar(ctr)
 	plt.title('SST anomaly')
 
-	doy = str(data['time'][idate])
-	doy = (doy.split('Coordinates:')[1].split('Attributes:')[0]
-		   .split('64[ns] ')[1].split('T')[0])
-	fig.suptitle('%dth percentile SST on %s' % (p_thresh, doy))
+	fig.suptitle('%dth percentile SST' % (p_thresh))
 	plt.show()
 
 
 if __name__ == "__main__":
 
 	fname = os.path.join(os.getcwd(), 'SST_extremes') # input data dir path
-	fname = os.path.join(fname, 'SST_90_yrs_20rm.nc')
+	fname = os.path.join(fname, 'SST_10_yrs_20rp.nc')
 
 	idate = 0 # date choice in the timeseries
 
