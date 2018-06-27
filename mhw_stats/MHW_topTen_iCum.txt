@@ -1,0 +1,210 @@
+Number 1
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.9686495873235899)
+Coordinates:
+    time     datetime64[ns] 2010-09-07
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.350721774814874)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(82.39402826370733)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 61 days
+Start date: 18 July 2010
+End date: 16 September 2010
+
+Number 2
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.7258782540598219)
+Coordinates:
+    time     datetime64[ns] 2016-06-22
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.2314637233838264)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(48.02708521196923)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 39 days
+Start date: 20 June 2016
+End date: 28 July 2016
+
+Number 3
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(2.5908299722979145)
+Coordinates:
+    time     datetime64[ns] 2004-02-21
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.653964087100013)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(44.65703035170035)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 27 days
+Start date: 13 February 2004
+End date: 10 March 2004
+
+Number 4
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.681350708007816)
+Coordinates:
+    time     datetime64[ns] 1998-06-29
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.2295506538883343)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(44.26382353998003)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 36 days
+Start date: 06 June 1998
+End date: 11 July 1998
+
+Number 5
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.8187186333440977)
+Coordinates:
+    time     datetime64[ns] 1998-08-17
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.513864849459741)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(37.846621236493526)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 25 days
+Start date: 29 July 1998
+End date: 22 August 1998
+
+Number 6
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.633472011935325)
+Coordinates:
+    time     datetime64[ns] 2017-08-23
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.2855253506025037)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(37.28023516747261)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 29 days
+Start date: 01 August 2017
+End date: 29 August 2017
+
+Number 7
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.5761500943091633)
+Coordinates:
+    time     datetime64[ns] 2010-06-06
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.083323898403327)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(30.333069155293156)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 28 days
+Start date: 17 May 2010
+End date: 13 June 2010
+
+Number 8
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.8992945763372617)
+Coordinates:
+    time     datetime64[ns] 1982-01-09
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.3467318962746004)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(29.628101718041208)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 22 days
+Start date: 29 December 1981
+End date: 19 January 1982
+
+Number 9
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.812997387301536)
+Coordinates:
+    time     datetime64[ns] 2009-09-10
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.317967865124476)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(28.99529303273847)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 22 days
+Start date: 01 September 2009
+End date: 22 September 2009
+
+Number 10
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(1.9038081630583754)
+Coordinates:
+    time     datetime64[ns] 1988-10-21
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(1.3634106512992623)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(27.268213025985247)
+Coordinates:
+    lon      float32 154.125
+    lat      float32 -23.875 deg. C-days
+Duration: 20 days
+Start date: 06 October 1988
+End date: 25 October 1988
+
