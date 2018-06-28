@@ -1,210 +1,130 @@
 Number 1
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.9686495873235899)
+array(1.4431226791874074)
 Coordinates:
-    time     datetime64[ns] 2010-09-07
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2016-06-26 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.350721774814874)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(0.9508820405840279) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(82.39402826370733)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 61 days
-Start date: 18 July 2010
-End date: 16 September 2010
+array(72.26703508438612) deg. C-days
+Duration: 76 days
+Start date: 21 May 2016
+End date: 04 August 2016
 
 Number 2
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.7258782540598219)
+array(1.6046615723640727)
 Coordinates:
-    time     datetime64[ns] 2016-06-22
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2010-09-15 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.2314637233838264)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(1.1032290967463276) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(48.02708521196923)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 39 days
-Start date: 20 June 2016
-End date: 28 July 2016
+array(71.7098912885113) deg. C-days
+Duration: 65 days
+Start date: 15 August 2010
+End date: 18 October 2010
 
 Number 3
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.681350708007816)
+array(1.5251213196785258)
 Coordinates:
-    time     datetime64[ns] 1998-06-29
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 1998-09-15 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.2295506538883343)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(1.0136248571691613) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(44.26382353998003)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 36 days
-Start date: 06 June 1998
-End date: 11 July 1998
+array(62.844741144488) deg. C-days
+Duration: 62 days
+Start date: 20 July 1998
+End date: 19 September 1998
 
 Number 4
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.633472011935325)
+array(1.352752070273123)
 Coordinates:
-    time     datetime64[ns] 2017-08-23
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 1998-04-27 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.2855253506025037)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(0.9912382556546123) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(37.28023516747261)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 29 days
-Start date: 01 August 2017
-End date: 29 August 2017
+array(38.65829197052988) deg. C-days
+Duration: 39 days
+Start date: 21 April 1998
+End date: 29 May 1998
 
 Number 5
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.5761500943091633)
+array(1.637018265262725)
 Coordinates:
-    time     datetime64[ns] 2010-06-06
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2008-12-14 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.083323898403327)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(1.2051343427290588) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(30.333069155293156)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 28 days
-Start date: 17 May 2010
-End date: 13 June 2010
+array(44.58997068097518) deg. C-days
+Duration: 37 days
+Start date: 16 November 2008
+End date: 22 December 2008
 
 Number 6
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(2.5908299722979145)
+array(1.2005428806428)
 Coordinates:
-    time     datetime64[ns] 2004-02-21
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2016-03-16 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.653964087100013)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(1.0287332576362596) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(44.65703035170035)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 27 days
-Start date: 13 February 2004
-End date: 10 March 2004
+array(38.06313053254161) deg. C-days
+Duration: 37 days
+Start date: 28 February 2016
+End date: 04 April 2016
 
 Number 7
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.8187186333440977)
+array(1.6261483469317035)
 Coordinates:
-    time     datetime64[ns] 1998-08-17
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2005-12-05 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.513864849459741)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(1.1147767343828763) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(37.846621236493526)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 25 days
-Start date: 29 July 1998
-End date: 22 August 1998
+array(37.90240896901779) deg. C-days
+Duration: 34 days
+Start date: 19 November 2005
+End date: 22 December 2005
 
 Number 8
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.812997387301536)
+array(1.3412287312169227)
 Coordinates:
-    time     datetime64[ns] 2009-09-10
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2004-02-24 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.317967865124476)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(1.0726392361955999) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(28.99529303273847)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 22 days
-Start date: 01 September 2009
-End date: 22 September 2009
+array(31.106537849672396) deg. C-days
+Duration: 29 days
+Start date: 14 February 2004
+End date: 13 March 2004
 
 Number 9
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.8992945763372617)
+array(1.5202990501157707)
 Coordinates:
-    time     datetime64[ns] 1982-01-09
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2017-03-19 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.3467318962746004)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(1.0946899276809132) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(29.628101718041208)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 22 days
-Start date: 29 December 1981
-End date: 19 January 1982
+array(28.461938119703746) deg. C-days
+Duration: 26 days
+Start date: 13 March 2017
+End date: 07 April 2017
 
 Number 10
 Maximum intensity: <xarray.DataArray 'sst' ()>
-array(1.564561228598322)
+array(1.248800154655214)
 Coordinates:
-    time     datetime64[ns] 1998-04-26
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+    time     datetime64[ns] 2017-01-19 deg. C
 Average intensity: <xarray.DataArray 'sst' ()>
-array(1.1142685885802948)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C
+array(0.9863130957553773) deg. C
 Cumulative intensity: <xarray.DataArray 'sst' ()>
-array(23.39964036018619)
-Coordinates:
-    lon      float32 154.125
-    lat      float32 -23.875 deg. C-days
-Duration: 21 days
-Start date: 19 April 1998
-End date: 09 May 1998
+array(25.64414048963981) deg. C-days
+Duration: 26 days
+Start date: 12 January 2017
+End date: 06 February 2017
 

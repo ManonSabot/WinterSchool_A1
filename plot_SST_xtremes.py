@@ -109,7 +109,7 @@ def reef_points(data):
 			152.375, 153.375]
 
 	all_points = data.sel(lon=lons, lat=lats, method='nearest')
-	all_points = all_points.mean(dim=('lon', 'lat'))
+	all_points = all_points.mean('lon').mean('lat')
 
 	return all_points
 
@@ -218,9 +218,11 @@ def plot_SST_anom(data, p_thresh, idate, proj = ccrs.LambertCylindrical(),
 
 if __name__ == "__main__":
 
-	fname = os.path.join(os.getcwd(), 'SST_extremes') # input data dir path
-	fname = os.path.join(fname, 'SST_ANOM_ALL.nc')
+	file = 'SST_ANOM_ALL.nc' # pick a file in SST_extremes/
 
-	idate = 0 # date choice in the timeseries
+	fname = os.path.join(os.getcwd(), 'SST_extremes') # input data dir path
+	fname = os.path.join(fname, file) # full path to file
+
+	idate = 0 # date choice in the timeseries, not relevant for mhw / 'ALL' SST
 
 	main(fname, idate)
