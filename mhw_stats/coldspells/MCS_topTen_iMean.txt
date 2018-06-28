@@ -1,0 +1,130 @@
+Number 1
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.6054486920756688)
+Coordinates:
+    time     datetime64[ns] 1999-12-08 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.2383671575976951) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-24.767343151953902) deg. C-days
+Duration: 20 days
+Start date: 28 November 1999
+End date: 17 December 1999
+
+Number 2
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.4698832727247648)
+Coordinates:
+    time     datetime64[ns] 2006-12-22 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.1630929443822628) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-19.77258005449847) deg. C-days
+Duration: 17 days
+Start date: 09 December 2006
+End date: 25 December 2006
+
+Number 3
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.6439444018948457)
+Coordinates:
+    time     datetime64[ns] 1997-03-20 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.1386220386805919) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-81.9807867850026) deg. C-days
+Duration: 72 days
+Start date: 13 March 1997
+End date: 23 May 1997
+
+Number 4
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.319278224822014)
+Coordinates:
+    time     datetime64[ns] 1993-04-26 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.1379403615585986) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-19.344986146496176) deg. C-days
+Duration: 17 days
+Start date: 16 April 1993
+End date: 02 May 1993
+
+Number 5
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.5127324135072762)
+Coordinates:
+    time     datetime64[ns] 1991-03-19 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.1301441150194271) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-65.54835867112678) deg. C-days
+Duration: 58 days
+Start date: 25 February 1991
+End date: 23 April 1991
+
+Number 6
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.2828833672308164)
+Coordinates:
+    time     datetime64[ns] 1989-12-25 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.0929948305754056) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-22.952891442083516) deg. C-days
+Duration: 21 days
+Start date: 18 December 1989
+End date: 07 January 1990
+
+Number 7
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.259252363635646)
+Coordinates:
+    time     datetime64[ns] 2006-10-18 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.0925108509678978) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-16.387662764518467) deg. C-days
+Duration: 15 days
+Start date: 10 October 2006
+End date: 24 October 2006
+
+Number 8
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.3039225301434918)
+Coordinates:
+    time     datetime64[ns] 1993-12-20 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.0878492086863583) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-23.93268259109988) deg. C-days
+Duration: 22 days
+Start date: 30 November 1993
+End date: 21 December 1993
+
+Number 9
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.224831427297282)
+Coordinates:
+    time     datetime64[ns] 1991-11-29 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.084261089975382) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-7.589827629827674) deg. C-days
+Duration: 7 days
+Start date: 26 November 1991
+End date: 02 December 1991
+
+Number 10
+Maximum intensity: <xarray.DataArray 'sst' ()>
+array(-1.8607265718521617)
+Coordinates:
+    time     datetime64[ns] 1982-11-21 deg. C
+Average intensity: <xarray.DataArray 'sst' ()>
+array(-1.0769812286541014) deg. C
+Cumulative intensity: <xarray.DataArray 'sst' ()>
+array(-193.85662115773823) deg. C-days
+Duration: 180 days
+Start date: 08 June 1982
+End date: 04 December 1982
+

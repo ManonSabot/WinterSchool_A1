@@ -41,9 +41,10 @@ def main(fname, idate):
 	data = read_data(fname)
 
 	if 'ALL' in fname:
-		time = return_time(data['time'])
+		time, __, __ = return_time(data['time'])
 		reef_cell = reef_points(data)
-		mhw_stats(time, reef_cell['sst'])
+		#mhw_stats(time, reef_cell['sst'])
+		mhw_stats(time, reef_cell['sst'], coldSpells = True)
 
 	else:
 		if '_10_' in fname:
@@ -52,10 +53,14 @@ def main(fname, idate):
 		if '_90_' in fname:
 			p_thresh = 90
 
-		print(data['time'])
-		print(data.keys)
+		if '_mean_' in fname:
+			p_thresh = 0
 
-		plot_SST_anom(data, p_thresh, idate)
+		if '_seasons.nc' in fname:
+			plot_SST_anom(data, p_thresh, idate, seasons = 'yes')
+
+		else:
+			plot_SST_anom(data, p_thresh, idate)
 
 
 
@@ -96,7 +101,7 @@ def return_time(xtime):
 	end_date = date(int(end_date[:4]), int(end_date[5:7]), int(end_date[8:10]))
 	time = np.arange(start_date.toordinal(), end_date.toordinal()+1)
 
-	return time
+	return time, start_date, end_date
 
 
 def reef_points(data):
@@ -160,7 +165,7 @@ def draw_reef(proj):
 	lons = [dms2dd(142.5, 0, 4, 'W'), dms2dd(145, 0, 4, 'W'), \
 			dms2dd(145, 0, 4, 'W'), dms2dd(147, 0, 4, 'W'), \
 			dms2dd(152, 55, 4, 'W'), dms2dd(154, 0, 4, 'W'), \
-			dms2dd(152, 0, 4, 'W')]
+			dms2dd(152, 3, 4, 'W')]
 	
 	for i in range(len(lats) - 1):
 
@@ -180,8 +185,8 @@ def draw_background_map(ax, lon, lat, proj, res = '10m'):
 	return
 
 
-def plot_SST_anom(data, p_thresh, idate, proj = ccrs.LambertCylindrical(),
-															   layout = 'line'):
+def plot_SST_anom(data, p_thresh, idate, seasons = 'no', layout = 'line',
+													 proj = ccrs.PlateCarree()):
 
 	fig = plt.figure()
 	fig.patch.set_facecolor('white')
@@ -194,10 +199,11 @@ def plot_SST_anom(data, p_thresh, idate, proj = ccrs.LambertCylindrical(),
 
 	draw_background_map(ax, data['lon'], data['lat'], proj)
 	ctr = ax.contourf(data['lon'], data['lat'], data['sst'][idate,:,:],
-		   			  cmap = plt.cm.GnBu, transform = proj)
+					  cmap = plt.cm.GnBu, transform = proj)
 	draw_reef(proj)
-	plt.colorbar(ctr)
-	plt.title('SST')
+	fig.colorbar(ctr, ax = ax, fraction = 0.06)
+	ax.set_aspect(1.2)
+	ax.set_title('SST')
 
 	if layout == 'line':
 		ax = plt.subplot(1, 2, 2, projection = proj)
@@ -207,18 +213,60 @@ def plot_SST_anom(data, p_thresh, idate, proj = ccrs.LambertCylindrical(),
 
 	draw_background_map(ax, data['lon'], data['lat'], proj)
 	ctr = ax.contourf(data['lon'], data['lat'], data['anom'][idate,:,:],
-		   			  cmap = plt.cm.GnBu,transform = proj)
+					  cmap = plt.cm.GnBu,transform = proj)
 	draw_reef(proj)
-	plt.colorbar(ctr)
-	plt.title('SST anomaly')
+	fig.colorbar(ctr, ax = ax, fraction = 0.06)
+	ax.set_aspect(1.2)
+	ax.set_title('SST anomaly')
 
-	fig.suptitle('%dth percentile SST' % (p_thresh))
-	plt.show()
+	# figure title section
+	start_date = '1981-09-01'
+	end_date = '2018-06-20'
+
+	if seasons == 'yes':
+		if idate == 0:
+			specify = 'multi-year DJF '
+
+		if idate == 1:
+			specify = 'multi-year MAM '
+
+		if idate == 2:
+			specify = 'multi-year JJA '
+
+		if idate == 3:
+			specify = 'multi-year SON '
+		
+
+	if seasons == 'no':
+		specify = ''
+
+	if p_thresh == 0:
+		fig.suptitle('%smean for %s to %s' % (specify, start_date, end_date))
+
+	else:
+		fig.suptitle('%dth %spercentile for %s to %s' % (p_thresh, specify,
+					 start_date, end_date))
+
+	namefig = specify.replace(' ', '_')
+
+	if p_thresh == 0:
+		namefig += 'mean.png'
+
+	else:
+		namefig += '%dth_percentile.png' % (p_thresh)
+
+	namefig = os.path.join(os.getcwd(), 'SST_extremes/%s' % (namefig))
+	fig.subplots_adjust(left = 0.075, bottom = 0., top = 1., hspace = 0.1,
+						wspace = 0.24)
+	plt.tight_layout()
+	plt.savefig(namefig, dpi = 1200, transparent = True)
 
 
 if __name__ == "__main__":
 
-	file = 'SST_ANOM_ALL.nc' # pick a file in SST_extremes/
+	# if 'SST_ANOM_ALL.nc', mhw is run; if else, plots the representative state
+	file = 'SST_90_seasons.nc' # pick a file in SST_extremes/
+	#file = 'SST_ANOM_ALL.nc' # pick a file in SST_extremes/
 
 	fname = os.path.join(os.getcwd(), 'SST_extremes') # input data dir path
 	fname = os.path.join(fname, file) # full path to file
